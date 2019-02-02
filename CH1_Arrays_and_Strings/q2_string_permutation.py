@@ -3,17 +3,14 @@ import time
 # Assumptions made: input uses a ASCII (128) character set
 # Uses a boolean list. At most needs to go over 128 characters.
 
-def is_string_permutation_ascii_array (s1, s2):
 
+def is_string_permutation_ascii_array(s1, s2):
     if len(s1) != len(s2):
         return False
-
     character_set_check = [0] * 128
-
     for c in s1:
         ascii_value = ord(c)
         character_set_check[ascii_value] += 1
-
     for c in s2:
         ascii_value = ord(c)
         if character_set_check[ascii_value] == 0:
@@ -27,6 +24,7 @@ def is_string_permutation_ascii_array (s1, s2):
 # Solution 3
 # Uses sorting, Increased time complexity, but a possible solution without using any extra space
 
+
 def is_string_permutation_sorting(s1, s2):
     s1 = list(s1)
     s2 = list(s2)
@@ -36,8 +34,8 @@ def is_string_permutation_sorting(s1, s2):
 
     if s1 != s2:
         return False
-
     return True
+
 
 start_time = time.perf_counter()
 print(is_string_permutation_ascii_array('abcd','abcd'))
