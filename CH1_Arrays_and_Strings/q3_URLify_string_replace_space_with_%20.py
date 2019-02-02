@@ -1,3 +1,5 @@
+import time
+
 s = "Mr John Smith    "
 
 # The following function also uses STRINGBUILDER concept
@@ -12,8 +14,12 @@ def using_strip_function(s):
             s[i] = '%20'
     return ''.join(s)
 
+start_time = time.perf_counter()
 print(using_strip_function(s))
+end_time = time.perf_counter()
+time_taken = end_time - start_time
 
+print('string.strip() : ' + "%.10f" % time_taken + " seconds")
 
 # The following function also uses STRINGBUILDER concept
 # First convert the string into list which makes mutating string a constant time operation
@@ -33,4 +39,9 @@ def manually_shifting_and_inserting(s):
                 s[i + 2] = '0'
     return ''.join(s)
 
+start_time = time.perf_counter()
 print(manually_shifting_and_inserting(s))
+end_time = time.perf_counter()
+time_taken = end_time - start_time
+
+print('insert and shift right time taken : ' + "%.10f" % time_taken + " seconds")
