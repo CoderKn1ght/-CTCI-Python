@@ -11,18 +11,22 @@ n2.next = n3
 n3.next = n4
 n4.next = n5
 
-
-def kth_to_last(head, k):
+def remove_kth_from_last(head, k):
     leading = head
     trailing = head
     count = 0
+
     while count < k:
         leading = leading.next
         count += 1
+    if not leading:
+        head = head.next
+        return head
     while leading:
+        prev = trailing
         trailing = trailing.next
         leading = leading.next
-    return trailing.val
+    prev.next = prev.next.next
+    return head
 
-
-print(kth_to_last(n1, 3))
+remove_kth_from_last(n1,5).iterate_and_print()
