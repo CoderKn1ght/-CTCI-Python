@@ -4,7 +4,8 @@ class Node(object):
         self.next = None
 
     def iterate_and_print(self):
+        i = 0
         while self:
-            print(self.val)
+            print("{}: {}".format(i,self.val))
             self = self.next
 
