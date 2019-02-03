@@ -8,4 +8,5 @@ class Node(object):
         while self:
             print("{}: {}".format(i,self.val))
             self = self.next
+            i += 1
 
