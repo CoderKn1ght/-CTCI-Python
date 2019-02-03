@@ -6,6 +6,7 @@ class Node(object):
     def iterate_and_print(self):
         i = 0
         while self:
-            print("{}: {}".format(i,self.val))
+            print("{}: {}".format(i, self.val))
             self = self.next
+            i += 1
 
