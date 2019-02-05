@@ -33,10 +33,16 @@ def pop_at_index_and_insert_last(index):
 
 
 # try shifting everythin one back
-def pop_at_index_and_shift_back(index):
-    for i in range (index, len(set_of_stack)):
-        print(i)
-        # temp = set_of_stack[]
+# def pop_at_index_and_shift_back(index):
+#     current_stack = set_of_stack[index]
+#     current_stack.pop()
+#     for i in range (index, len(set_of_stack)):
+#         if len(set_of_stack[i]) < 3:
+#             # test = set_of_stack[i+1].pop()
+#         break
+#
+#
+#         # temp = set_of_stack[]
 
 push(5)
 push(3)

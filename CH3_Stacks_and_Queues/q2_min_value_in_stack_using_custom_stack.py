@@ -13,6 +13,10 @@ class Stack(object):
             self.min_values.append(min(val, self.get_min()))
         self.stack.append(val)
 
+    def pop(self):
+        self.stack.pop()
+        self.min_values.pop()
+
     def get_size(self):
         return len(self.stack)
 
@@ -33,4 +37,6 @@ min_stack.push(10)
 min_stack.push(5)
 min_stack.push(0)
 min_stack.print_stack_and_min_stack()
+print(min_stack.get_min())
+min_stack.pop()
 print(min_stack.get_min())
