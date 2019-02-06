@@ -47,9 +47,7 @@ def breadth_first_search(head):
     queue.append(head)
 
     while queue:
-
         temp = queue.pop()
-
         print(temp.val)
 
         if temp.left:
