@@ -1,4 +1,5 @@
 from CH4_Trees_and_Graphs.adjacency_list_graph import Graph
+from collections import deque
 
 number_of_vertices = 4
 vertex1 = 3
@@ -15,21 +16,44 @@ graph.add_edge(3,3)
 
 graph.print_graph()
 
-def find_path_helper(current, target, visited):
+def dfs_helper(current, target, visited):
     visited[current] = True
 
     for edge in graph.get_edges_of_vertex(current):
         if edge == target:
             return True
         if not visited[edge]:
-            if find_path_helper(edge, target, visited):
+            if dfs_helper(edge, target, visited):
                 return True
 
     return False
 
-def find_path_between_routes(vertex1, vertex2):
+def find_path_between_routes_using_dfs(vertex1, vertex2):
     visited = [False] * number_of_vertices
-    return find_path_helper(vertex1, vertex2, visited)
+    return dfs_helper(vertex1, vertex2, visited)
 
-print(find_path_between_routes(vertex1, vertex2))
-print(find_path_between_routes(vertex2, vertex1))
+def find_path_between_routes_using_bfs(source, target):
+    visited = [False] * number_of_vertices
+
+    queue = deque()
+
+    queue.append(source)
+    visited[source] = True
+
+    while queue:
+        temp = queue.pop()
+
+        for edge in graph.get_edges_of_vertex(temp):
+            if edge == target:
+                return True
+            if not visited[edge]:
+                queue.appendleft(edge)
+                visited[edge] = True
+
+    return False
+
+# print(find_path_between_routes_using_dfs(vertex1, vertex2))
+# print(find_path_between_routes_using_dfs(vertex2, vertex1))
+
+print(find_path_between_routes_using_bfs(vertex1, vertex2))
+print(find_path_between_routes_using_bfs(vertex2, vertex1))
