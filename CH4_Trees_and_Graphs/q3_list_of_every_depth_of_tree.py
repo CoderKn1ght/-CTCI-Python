@@ -15,7 +15,4 @@ def construct_tree():
     end = len(sorted_list) - 1
     head = TreeNode(return_min_element(start, end))
 
-
-
-
 construct_tree(sorted_list)
