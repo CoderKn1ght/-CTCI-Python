@@ -1,18 +1,27 @@
 from CH4_Trees_and_Graphs.TreeNode import TreeNode
+from collections import deque
 
-sorted_list = [0,1,2,3,4]
+sorted_list = [0,1,2,3,4,5,6,7,8,9,10]
 
-def return_min_element(start, end):
+
+def in_order(head):
+    if not head:
+        return
+    in_order(head.left)
+    print(head.val)
+    in_order(head.right)
+
+def construct_tree(start, end):
     mid_index = int((start + end) / 2)
-    return sorted_list[mid_index]
+    head = TreeNode(sorted_list[mid_index])
+    if mid_index != start:
+        head.left = construct_tree(start, mid_index-1)
+    if mid_index != end:
+        head.right = construct_tree(mid_index+1, end)
 
-def return_mid_index(start, end):
-    mid_index = int((start + end) / 2)
-    return sorted_list[mid_index]
+    return head
 
-def construct_tree():
-    start = 0
-    end = len(sorted_list) - 1
-    head = TreeNode(return_min_element(start, end))
+start = 0
+end = len(sorted_list) - 1
 
-construct_tree(sorted_list)
+in_order(construct_tree(start, end))
