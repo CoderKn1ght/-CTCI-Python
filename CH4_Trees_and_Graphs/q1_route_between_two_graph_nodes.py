@@ -52,8 +52,8 @@ def find_path_between_routes_using_bfs(source, target):
 
     return False
 
-# print(find_path_between_routes_using_dfs(vertex1, vertex2))
-# print(find_path_between_routes_using_dfs(vertex2, vertex1))
+print("DFS: ",find_path_between_routes_using_dfs(vertex1, vertex2))
+print("DFS: ",find_path_between_routes_using_dfs(vertex2, vertex1))
 
-print(find_path_between_routes_using_bfs(vertex1, vertex2))
-print(find_path_between_routes_using_bfs(vertex2, vertex1))
+print("BFS: ",find_path_between_routes_using_bfs(vertex1, vertex2))
+print("BFS: ",find_path_between_routes_using_bfs(vertex2, vertex1))

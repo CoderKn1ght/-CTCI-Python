@@ -1,15 +1,15 @@
-from CH4_Trees_and_Graphs.Node import Node
+from CH4_Trees_and_Graphs.TreeNode import TreeNode
 from collections import deque
 
-head = Node(6)
-head.left = Node(2)
-head.right = Node(10)
+head = TreeNode(6)
+head.left = TreeNode(2)
+head.right = TreeNode(10)
 
-head.left.left = Node(0)
-head.left.right = Node(4)
+head.left.left = TreeNode(0)
+head.left.right = TreeNode(4)
 
-head.right.left = Node(8)
-head.right.right = Node(12)
+head.right.left = TreeNode(8)
+head.right.right = TreeNode(12)
 
 def in_order(head):
 
