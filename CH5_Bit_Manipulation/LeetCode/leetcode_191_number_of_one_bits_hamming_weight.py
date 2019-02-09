@@ -1,4 +1,4 @@
-def get_hamming_distance(number):
+def get_hamming_weight(number):
     hamming_distance = 0
     while number != 0:
         if number & 1 == 1:
@@ -8,4 +8,4 @@ def get_hamming_distance(number):
     return hamming_distance
 
 number = 11
-print(get_hamming_distance(number))
+print(get_hamming_weight(number))
