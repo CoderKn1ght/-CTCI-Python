@@ -1,0 +1,10 @@
+-------------------------
+CTCI
+1)multiplying a number by 2 (x * x) is equal to left shifting by one
+2) multiplying a number by 4 (x * x * x * x) is equal to left shifting by two
+generalisation: multiplying a number by 2 is left shifting by 2
+and for deviding right shift by
+3) XOR with negation of itself is always true
+4) To drop n bit from right side, do and with negation of 0 left shifted n times
+CTCI
+--------------------------------
