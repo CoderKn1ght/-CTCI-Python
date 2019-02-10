@@ -8,3 +8,5 @@ and for deviding right shift by
 4) To drop n bit from right side, do and with negation of 0 left shifted n times
 CTCI
 --------------------------------
+
+XOR -> sets the bit ONLY if they are DIFFERENT
