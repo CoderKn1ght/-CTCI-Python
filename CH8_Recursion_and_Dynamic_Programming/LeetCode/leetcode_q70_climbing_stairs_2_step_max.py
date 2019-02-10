@@ -16,4 +16,3 @@ def number_of_possible_ways_to_climb(n):
 number_of_stairs = 4
 
 print(number_of_possible_ways_to_climb(number_of_stairs))
-
