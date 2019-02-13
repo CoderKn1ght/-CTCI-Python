@@ -1,27 +1,14 @@
 def power_set_dynamic_programming(elements):
     print(elements)
 
-    super_set = []
-    for i in range(len(elements)+1):
-        if i == 0:
-            super_set.append([])
-            continue
-        temp_set = []
-        for list in super_set:
-            temp_set.append(list)
-        super_set.append([elements[i-1]])
+    super_set = [[]]
+    for element in elements:
+        temp_set = [set for set in super_set]
         for list in temp_set:
-            if list:
-                temp_list = []
-                for element in list:
-                    temp_list.append(element + elements[i-1])
-                super_set.append(temp_list)
-    print(super_set)
-    size = 0
-    for list in super_set:
-        size += len(list)
+            current_list = [current_list for current_list in list]
+            current_list.append(element)
+            super_set.append(current_list)
+    return super_set
 
-    print(size+1)
-
-elements = ['a','b','c','d']
-power_set_dynamic_programming(elements)
+elements = ['a','b','c']
+print(power_set_dynamic_programming(elements))

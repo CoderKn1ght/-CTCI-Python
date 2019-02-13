@@ -1,7 +1,5 @@
 def sub_sets_iterative(nums):
-    power_set = []
-
-    power_set.append([])
+    power_set = [[]]
     for num in nums:
         temp_set = [set for set in power_set]
         for temp_list in temp_set:
@@ -11,8 +9,7 @@ def sub_sets_iterative(nums):
     return power_set
 
 def sub_set_sums_recursive(nums):
-    super_set = []
-    super_set.append([])
+    super_set = [[]]
     i = 0
     return sub_Set_sums_recursive_util(super_set, nums, i)
 
@@ -30,5 +27,5 @@ def sub_Set_sums_recursive_util(super_set, nums, i):
     return sub_Set_sums_recursive_util(super_set, nums, i+1)
 
 
-nums = [1,2]
+nums = [1,2,3]
 print(sub_set_sums_recursive(nums))
