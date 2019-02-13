@@ -1,4 +1,4 @@
-def permutations_without_duplicates(string):
+def permutations_with_duplicates(string):
 
     previous_list = []
 
@@ -6,16 +6,17 @@ def permutations_without_duplicates(string):
         if i == 0:
             previous_list = [string[i]]
             continue
-        current_list = []
+        current_set = set()
         for single_string in previous_list:
             for insert_index in range(len(single_string)+1):
                 temp_string = [i for i in single_string]
                 temp_string.insert(insert_index,string[i])
-                current_list.append(''.join(temp_string))
-        previous_list = current_list
+                current_set.add(''.join(temp_string))
+
+        previous_list = [string for string in current_set]
 
     print(len(previous_list))
     return previous_list
 
-nums = "abc"
-print(permutations_without_duplicates(nums))
+nums = "abb"
+print(permutations_with_duplicates(nums))
