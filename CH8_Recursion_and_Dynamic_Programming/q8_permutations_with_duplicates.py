@@ -1,3 +1,5 @@
+# do it using recursion
+
 def permutations_with_duplicates(string):
 
     previous_list = []

@@ -1,3 +1,7 @@
+# do it using recursion
+# do it geeks for geeks way (dfs kinda thing)
+
+
 def permutations_without_duplicates(string):
 
     previous_list = []

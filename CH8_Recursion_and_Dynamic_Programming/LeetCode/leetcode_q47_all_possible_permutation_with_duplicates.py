@@ -1,4 +1,5 @@
 # Think about faster algorithm
+# do it using recursion
 
 def permutations_without_duplicates(nums):
     previous_list = [[]]
