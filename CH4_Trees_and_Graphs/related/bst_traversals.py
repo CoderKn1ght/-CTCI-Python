@@ -20,6 +20,24 @@ def in_order(head):
     print(head.val)
     in_order(head.right)
 
+def in_order_using_iteration(head):
+    if head == None:
+        return
+
+    stack = []
+    stack.append(head)
+
+    while stack:
+        temp = stack[len(stack)-1]
+
+        if temp.left != None:
+            stack.append(temp.left)
+
+        if temp.right != None:
+            stack.append(temp.right)
+
+
+
 def pre_order(head):
 
     if head == None:
