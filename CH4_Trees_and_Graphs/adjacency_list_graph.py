@@ -1,6 +1,7 @@
 class Graph(object):
 
     def __init__(self, number_of_vertices):
+        self.number_of_vertices = number_of_vertices
         self.adjacenct_list = [[] for x in range(number_of_vertices)]
 
     def add_edge(self, from_vertice, to_vertice):

@@ -1,24 +1,12 @@
 from collections import Counter
+import heapq
 
 def solve(nums, k):
-    cnt = Counter()
+    counter = Counter(nums)
+    print(counter)
+    print(heapq.nlargest(k, counter.keys(), key=counter.get))
 
-    for num in nums:
-        cnt[num] += 1
-
-    cnt = cnt.most_common()
-
-    to_return = []
-    for keys in cnt:
-        if k == 0:
-            break
-        to_return.append(keys[0])
-        k -= 1
-
-    print(to_return)
-
-
-nums = [1, 2, 2]
+nums = [1,5,5,4,4,4,9]
 k = 2
 
 solve(nums, k)
