@@ -1,47 +1,39 @@
-# Solution 1
+# Come up with one pass solution (two pointer) where we also verify string are in same order(dict methdo does not care about order i.e move operation)
+# i.e if order is not same operation will be considered as move operations
+#
 
+from collections import Counter
 
-def is_one_away(s1, s2):
-    found_change = False
-    if len(s1) == len(s2):
-        for i in range(len(s1)):
-            if s1[i] != s2[i]:
-                if found_change:
-                    return False
-                found_change = True
-        return True
-    elif len(s1) > len(s2):
-        return helper(s1, s2)
-    else:
-        return helper(s2, s1)
+def is_one_away_using_dict(s1, s2):
 
+    if len(s2) > len(s1):
+        s1, s2 = s2, s1
 
-def helper(s1, s2):
-    if len(s1) - len(s2) > 1:
-        return False
     dict = {}
+
     for c in s1:
-        if c in dict:
-            dict[c] += 1
-        else:
+        if c not in dict:
             dict[c] = 1
+            continue
+        dict[c] += 1
+
+    one_different = False
+
     for c in s2:
-        if c in dict:
-            if dict[c] == 0:
+        if c not in dict:
+            if one_different:
                 return False
-            dict[c] -= 1
-        else:
+            one_different = True
+            continue
+        dict[c] -= 1
+
+
+    difference = 0
+    for key in dict:
+        difference += dict[key]
+        if difference > 1:
             return False
 
-    for value in dict.values():
-        flag = False
-        if value != 0 and value != 1:
-            return False
-        elif value == 1:
-            if flag:
-                return False
-            flag = True
     return True
 
-
-print(is_one_away('cake', 'eka'))
+print(is_one_away_using_dict('cas','cage'))
