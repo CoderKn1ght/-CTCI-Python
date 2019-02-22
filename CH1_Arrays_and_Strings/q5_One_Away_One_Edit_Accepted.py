@@ -1,6 +1,5 @@
 # Come up with one pass solution (two pointer) where we also verify string are in same order(dict methdo does not care about order i.e move operation)
 # i.e if order is not same operation will be considered as move operations
-#
 
 from collections import Counter
 
