@@ -24,10 +24,11 @@ def zero_matrix(matrix):
     for row in matrix:
         print(row)
 
+
 matrix = [
-    [0, 1, 2, 0],
+    [0, 14, 2, 11],
     [3, 4, 5, 2],
-    [1, 3, 1, 5]
+    [11, 3, 13, 5]
 ]
 
 zero_matrix(matrix)
